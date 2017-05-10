@@ -14,7 +14,7 @@ Unityエディタ上でゲームを実行中にエラーが発生した時、ゲ
 
 1. Consoleウインドウ左上の [Error Pause] ボタンを押し下げ状態にする
 
-    ![alt text](error-pause.png)
+    ![alt text](img/error-pause.png)
 
 ## 再生中は画面を赤くする
 
@@ -29,4 +29,4 @@ Unityエディタ上でゲームを実行中にエラーが発生した時、ゲ
 
 1.  [Playmode tint] の色を R255, G129, B129 に設定する
 
-    ![alt text](colortint.png)
+    ![alt text](img/colortint.png)
