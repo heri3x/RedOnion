@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public string EnemyName;
-    public Color Color;
-    public float Speed = 1;
-    public float Limit = 40;
-
+    public EnemyData Data;
 
     private Rigidbody2D m_rigidBody;
     private float m_count = 0;
@@ -16,9 +12,9 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        gameObject.name = EnemyName;
+        gameObject.name = Data.Name;
         m_rigidBody = GetComponent<Rigidbody2D>();
-        GetComponent<SpriteRenderer>().color = Color;
+        GetComponent<SpriteRenderer>().color = Data.Color;
     }
 
     void Update()
@@ -33,11 +29,11 @@ public class EnemyController : MonoBehaviour
 
         // 移動
         Vector2 direction = new Vector2(h, v);
-        m_rigidBody.velocity = direction.normalized * Speed;
+        m_rigidBody.velocity = direction.normalized * Data.Speed;
 
         //
         m_count += Mathf.Abs(h);
-        if (m_count >= Limit)
+        if (m_count >= Data.Limit)
         {
             m_moveLeft = !m_moveLeft;
             m_count = 0;
