@@ -8,8 +8,19 @@ public class GameManager : MonoBehaviour
 
     public EnemyData[] LevelData;
 
-    [Range(1, 5)]
+    [Range(1, 20)]
     public int Level;
+
+    [System.SerializableAttribute]
+    public class ParamGroup
+    {
+        public int Param1;
+        public int Param2;
+        public int Param3;
+    }
+
+    public ParamGroup TestParamGroup;
+
 
     void Start()
     {
