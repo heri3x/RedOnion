@@ -15,6 +15,8 @@ public class EnemyController : MonoBehaviour
         gameObject.name = Data.Name;
         m_rigidBody = GetComponent<Rigidbody2D>();
         GetComponent<SpriteRenderer>().color = Data.Color;
+
+        Debug.Log("level: " + GameManager.Instance.Level);
     }
 
     void Update()

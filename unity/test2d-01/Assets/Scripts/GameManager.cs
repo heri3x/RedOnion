@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[SingletonAttribute("Game Manager", true)]
 public class GameManager : MonoBehaviour
 {
-    public EnemyController Enemy;
-
     public EnemyData[] LevelData;
 
     [Range(1, 20)]
@@ -22,6 +21,22 @@ public class GameManager : MonoBehaviour
     public ParamGroup TestParamGroup;
 
 
+    public static GameManager Instance
+    {
+        get { return SingletonUtility<GameManager>.Instance; }
+    }
+
+
+    private void Awake()
+    {
+        SingletonUtility<GameManager>.HanldeAwake(this);
+    }
+
+    private void OnDestroy()
+    {
+        SingletonUtility<GameManager>.HanldeOnDestroy(this);
+    }
+
     void Start()
     {
         //level <= arrya size
@@ -31,7 +46,11 @@ public class GameManager : MonoBehaviour
         }
 
         //pass SO info into our enemy
-        Enemy.Data = LevelData[Level - 1];
+        var objects = UnityEngine.Object.FindObjectsOfType<EnemyController>();
+        foreach (var v in objects)
+        {
+            v.Data = LevelData[Level - 1];
+        }
     }
 
 }
