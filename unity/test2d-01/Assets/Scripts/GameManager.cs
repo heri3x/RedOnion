@@ -27,9 +27,26 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public EnemyData GetLevelData(int level)
+    {
+        level = Mathf.Clamp(level, 1, LevelData.Length);
+        return LevelData[level - 1];
+    }
+
     private void Awake()
     {
+        Debug.Log("GameManager.Awake");
         SingletonUtility<GameManager>.HanldeAwake(this);
+
+        //pass SO info into our enemy
+        var objects = UnityEngine.Object.FindObjectsOfType<EnemyController>();
+        int level = Level;
+        foreach (var v in objects)
+        {
+            Debug.Log("Setup Enemy: " + v.name);
+            v.Data = GetLevelData(level);
+            level++;
+        }
     }
 
     private void OnDestroy()
@@ -39,18 +56,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        //level <= arrya size
-        if (Level > LevelData.Length)
-        {
-            Level = LevelData.Length;
-        }
-
-        //pass SO info into our enemy
-        var objects = UnityEngine.Object.FindObjectsOfType<EnemyController>();
-        foreach (var v in objects)
-        {
-            v.Data = LevelData[Level - 1];
-        }
     }
 
 }

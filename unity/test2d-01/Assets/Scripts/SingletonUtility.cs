@@ -130,7 +130,7 @@ public class SingletonUtility<T> where T : MonoBehaviour
     }
 
 
-    private static T m_instance = Instance;
+    private static T m_instance;
     private static bool m_instantiated;
 }
 
