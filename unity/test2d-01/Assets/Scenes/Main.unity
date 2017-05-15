@@ -277,6 +277,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33b90596fda032f4abcf758a1e2e2b5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestValue1: 0
+  TestValue2: 0
 --- !u!1 &947944447
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1502605307}
   - component: {fileID: 1502605308}
+  - component: {fileID: 1502605309}
   - component: {fileID: 1502605306}
   - component: {fileID: 1502605305}
   - component: {fileID: 1502605304}
@@ -766,3 +769,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PostEffectMaterial: {fileID: 2100000, guid: 0ab5682f05f7002479ae10b5922bbec2, type: 2}
+--- !u!114 &1502605309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1502605302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 1a12672d142b20e49aaa809f3d8a1dd4, type: 2}
