@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Betty the Boss
   Color: {r: 1, g: 0, b: 0, a: 1}
-  Speed: 0.25
+  Speed: 1
   Limit: 40

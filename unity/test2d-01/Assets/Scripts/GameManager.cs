@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[SingletonAttribute("Game Manager", true)]
+[Singleton("Game Manager", true)]
 public class GameManager : MonoBehaviour
 {
     public EnemyData[] LevelData;
@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Debug.Log("GameManager.Awake");
-        SingletonUtility<GameManager>.HanldeAwake(this);
 
         //pass SO info into our enemy
         var objects = UnityEngine.Object.FindObjectsOfType<EnemyController>();
@@ -47,6 +46,8 @@ public class GameManager : MonoBehaviour
             v.Data = GetLevelData(level);
             level++;
         }
+
+        SingletonUtility<GameManager>.HanldeAwake(this);
     }
 
     private void OnDestroy()

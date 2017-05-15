@@ -55,7 +55,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a278ab38a55fb10479e39239465b22e1, type: 2}
   - {fileID: 11400000, guid: 116cdae80fd7eb04e975d1129a573925, type: 2}
   - {fileID: 11400000, guid: e6b4b2e3d54af99498239663dff23018, type: 2}
-  Level: 2
+  Level: 1
   TestParamGroup:
     Param1: 0
     Param2: 0

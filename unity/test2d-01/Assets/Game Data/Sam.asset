@@ -13,5 +13,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Sam the Sub-Boss
   Color: {r: 1, g: 0.61764693, b: 0.04411763, a: 1}
-  Speed: 0.35
+  Speed: 2
   Limit: 40

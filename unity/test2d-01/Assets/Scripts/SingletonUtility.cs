@@ -6,24 +6,24 @@ using UnityEngine;
 /// </summary>
 /// <typeparam name="T">対象クラス名</typeparam>
 /// <example>
-/// [SingletonAttribute("", true)]
+/// <code>
+/// [Singleton("", true)]
 /// public class GameManager : MonoBehaviour
 /// {
 ///     public static GameManager Instance
 ///     {
-///         get { return SingletonUtility<GameManager>.Instance; }
+///         get { return SingletonUtility&lt;GameManager&gt;.Instance; }
 ///     }
-/// 
 ///     private void Awake()
 ///     {
-///         SingletonUtility<GameManager>.HanldeAwake(this);
+///         SingletonUtility&lt;GameManager&gt;.HanldeAwake(this);
 ///     }
-/// 
 ///     private void OnDestroy()
 ///     {
-///         SingletonUtility<GameManager>.HanldeOnDestroy(this);
+///         SingletonUtility&lt;GameManager&gt;.HanldeOnDestroy(this);
 ///     }
 /// }
+/// </code>
 /// </example>
 public class SingletonUtility<T> where T : MonoBehaviour
 {
@@ -86,7 +86,7 @@ public class SingletonUtility<T> where T : MonoBehaviour
                 return m_instance;
             }
 
-            Debug.Log("シングルトンクラス " + type + "のインスタンスを生成");
+            Debug.Log("シングルトンクラス " + type + "のインスタンス生成");
             var attribute = Attribute.GetCustomAttribute(type, typeof(SingletonAttribute)) as SingletonAttribute;
             if (attribute == null)
             {
@@ -135,8 +135,9 @@ public class SingletonUtility<T> where T : MonoBehaviour
 }
 
 /// <summary>
-/// シングルトンクラス属性
+/// シングルトンクラスの属性
 /// </summary>
+/// <remarks><seealso cref="SingletonUtility{T}"/>も参照。</remarks>
 [AttributeUsage(AttributeTargets.Class, Inherited = true)]
 public class SingletonAttribute : Attribute
 {
@@ -154,7 +155,7 @@ public class SingletonAttribute : Attribute
     /// シングルトンクラス属性を生成する
     /// </summary>
     /// <param name="persistent">シーン変更時に消失しないオブジェクトにするかどうか</param>
-    public SingletonAttribute(string prefabPath, bool persistent = false)
+    public SingletonAttribute(string prefabPath, bool persistent)
     {
         PrefabPath = prefabPath;
         Persistent = persistent;
