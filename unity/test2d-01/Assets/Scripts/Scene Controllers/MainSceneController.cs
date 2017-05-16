@@ -74,6 +74,15 @@ public class MainSceneController : MonoBehaviour
         }
     }
 
+    public void TestEffectSepia(bool v)
+    {
+        var postEffect = MainCamera.GetComponent<PostEffect>();
+        if (postEffect != null)
+        {
+            postEffect.enabled = v;
+        }
+    }
+
     //-------------------------------------------------------------
 
 
