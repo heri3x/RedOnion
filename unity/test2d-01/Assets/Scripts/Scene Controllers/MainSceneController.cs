@@ -7,7 +7,6 @@ public class MainSceneController : MonoBehaviour
 {
     public UnityEngine.UI.RawImage ScreenFadeImage;
 
-
     //-------------------------------------------------------------
     public void TestBlackOut()
     {
@@ -28,6 +27,15 @@ public class MainSceneController : MonoBehaviour
     {
         GameManager.Instance.ScreenFadeController.FadeIn(0.5f);
     }
+
+    public Material CharaMaterialColorAdd;
+
+    public void TestSetCharaColorValue(float v)
+    {
+        CharaMaterialColorAdd.color =
+            new Color(v, CharaMaterialColorAdd.color.g, CharaMaterialColorAdd.color.b, CharaMaterialColorAdd.color.a);
+    }
+
     //-------------------------------------------------------------
 
 
