@@ -1,4 +1,4 @@
-﻿Shader "Custom/Sepia" {
+﻿Shader "Custom/CameraEffectSepia" {
 	Properties{
 		_Darkness("Dark", Range(0, 0.1)) = 0.04
 		_Strength("Strength", Range(0.05, 0.15)) = 0.05
