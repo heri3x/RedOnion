@@ -2358,7 +2358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1028307209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3057,7 +3057,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.17809704, g: 0.16592777, b: 0.24264705, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.42647058, b: 0.4264705, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -3379,7 +3379,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -813707673
+  randomSeed: -404558937
   InitialModule:
     serializedVersion: 3
     enabled: 1
