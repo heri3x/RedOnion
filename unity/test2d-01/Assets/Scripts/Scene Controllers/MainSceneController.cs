@@ -5,6 +5,7 @@ using UnityEngine;
 [AddComponentMenu("Test/MainSceneController")]
 public class MainSceneController : MonoBehaviour
 {
+    public Camera MainCamera;
     public UnityEngine.UI.RawImage ScreenFadeImage;
 
     //-------------------------------------------------------------
@@ -36,6 +37,32 @@ public class MainSceneController : MonoBehaviour
             new Color(v, CharaMaterialColorAdd.color.g, CharaMaterialColorAdd.color.b, CharaMaterialColorAdd.color.a);
     }
 
+    public void TestTogglePostEffectBloom(bool v)
+    {
+        var behavior = MainCamera.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>();
+        if (behavior != null)
+        {
+            var prof = behavior.profile;
+            if (prof != null)
+            {
+                prof.bloom.enabled = v;
+            }
+        }
+    }
+
+    public void TestTogglePostEffectVignette(bool v)
+    {
+        var behavior = MainCamera.GetComponent<UnityEngine.PostProcessing.PostProcessingBehaviour>();
+        if (behavior != null)
+        {
+            var prof = behavior.profile;
+            if (prof != null)
+            {
+                prof.vignette.enabled = v;
+            }
+        }
+    }
+
     //-------------------------------------------------------------
 
 
@@ -49,7 +76,7 @@ public class MainSceneController : MonoBehaviour
     private void Awake()
     {
         // GameManagerのシーン初期化処理を呼び出し
-        GameManager.Instance.SceneInit(ScreenFadeImage);
+        GameManager.Instance.SceneInit(MainCamera, ScreenFadeImage);
     }
 
     private void OnDestroy()

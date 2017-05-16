@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     //-------------------------------------------------
     [Space(20)]
     //-------------------------------------------------
+    public Camera MainCamera;
     public RawImageFadeController ScreenFadeController;
 
     //-------------------------------------------------
@@ -45,9 +46,10 @@ public class GameManager : MonoBehaviour
 
 
     // シーン初期化処理
-    public void SceneInit(RawImage screenFadeImage)
+    public void SceneInit(Camera mainCamera, RawImage screenFadeImage)
     {
         Debug.Log("GameManager.SceneInit()");
+        MainCamera = mainCamera;
         ScreenFadeController = GetComponent<RawImageFadeController>();
         ScreenFadeController.Init(screenFadeImage);
     }
@@ -56,6 +58,8 @@ public class GameManager : MonoBehaviour
     public void SceneTerm()
     {
         Debug.Log("GameManager.SceneTerm()");
+        //MainCamera = null;
+        //ScreenFadeController = null;
         ScreenFadeController.Term();
     }
 
