@@ -83,6 +83,11 @@ public class MainSceneController : MonoBehaviour
         }
     }
 
+    public void TestShakeScreen()
+    {
+        GameManager.Instance.ObjectShakeController.Shake(MainCamera.gameObject);
+    }
+
     //-------------------------------------------------------------
 
 

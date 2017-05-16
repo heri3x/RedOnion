@@ -6,6 +6,9 @@ using UnityEngine.UI;
 /// <summary>
 /// ゲーム管理
 /// </summary>
+/// <remarks>
+/// GameManagerのPrefabは、PrefabsフォルダではなくResourceフォルダに配置してください。
+/// </remarks>
 [Singleton("Game Manager", true)]
 public class GameManager : MonoBehaviour
 {
@@ -35,6 +38,7 @@ public class GameManager : MonoBehaviour
     //-------------------------------------------------
     public Camera MainCamera;
     public RawImageFadeController ScreenFadeController;
+    public ObjectShakeController ObjectShakeController;
 
     //-------------------------------------------------
 
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
         MainCamera = mainCamera;
         ScreenFadeController = GetComponent<RawImageFadeController>();
         ScreenFadeController.Init(screenFadeImage);
+        ObjectShakeController = GetComponent<ObjectShakeController>();
+        ObjectShakeController.Init();
     }
 
     // シーン終了処理
@@ -61,6 +67,7 @@ public class GameManager : MonoBehaviour
         //MainCamera = null;
         //ScreenFadeController = null;
         ScreenFadeController.Term();
+        ObjectShakeController.Term();
     }
 
 
