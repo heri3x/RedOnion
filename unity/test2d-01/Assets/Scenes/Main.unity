@@ -1579,7 +1579,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u7ACB\u3061\u7D75\u306E\u30AB\u30E9\u30FC\u306B\u8D64\u3092\u52A0\u7B97"
+  m_Text: "\u7ACB\u3061\u7D75\u306E\u9802\u70B9\u30AB\u30E9\u30FC\u3092\u5909\u66F4"
 --- !u!222 &714711703
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1776,8 +1776,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainCamera: {fileID: 1502605306}
   ScreenFadeImage: {fileID: 1742572990}
-  CharaMaterialColorAdd: {fileID: 2100000, guid: 0082a9488929f3c4d8ebaecb08c2a70c,
-    type: 2}
+  CharaMisaki: {fileID: 1928141422}
+  CharaKohaku: {fileID: 1596823229}
+  CharaYuko: {fileID: 1854432254}
 --- !u!1 &895664743
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 0082a9488929f3c4d8ebaecb08c2a70c, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3312,7 +3313,7 @@ SpriteRenderer:
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 74e695314b47e39478a5dc45ddbc26bd, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

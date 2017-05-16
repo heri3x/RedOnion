@@ -130,8 +130,11 @@ Shader "Custom/ColorEffectAdd"
 
 			fixed4 SpriteFrag(v2f IN) : SV_Target
 			{
-				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
-				c.rgba += _Color;	//加算
+				fixed4 c = SampleSpriteTexture (IN.texcoord);
+				c.rgb += IN.color.rbg;	//加算
+				c.a *= IN.color.a;	//アルファは乗算
+				//fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color;
+				//c.rgba += _Color;	//加算
 				c.rgb *= c.a;
 
 				return c;

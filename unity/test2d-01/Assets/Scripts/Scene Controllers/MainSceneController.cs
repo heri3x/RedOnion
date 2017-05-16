@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [AddComponentMenu("Test/MainSceneController")]
 public class MainSceneController : MonoBehaviour
@@ -29,12 +30,22 @@ public class MainSceneController : MonoBehaviour
         GameManager.Instance.ScreenFadeController.FadeIn(0.5f);
     }
 
-    public Material CharaMaterialColorAdd;
+    public SpriteRenderer CharaMisaki;
+    public RawImage CharaKohaku;
+    public RawImage CharaYuko;
 
     public void TestSetCharaColorValue(float v)
     {
-        CharaMaterialColorAdd.color =
-            new Color(v, CharaMaterialColorAdd.color.g, CharaMaterialColorAdd.color.b, CharaMaterialColorAdd.color.a);
+        Color color;
+
+        color = CharaMisaki.color;
+        CharaMisaki.color = new Color(v, color.g, color.b, color.a);
+
+        color = CharaKohaku.color;
+        CharaKohaku.color = new Color(1.0f - v, color.g, 1.0f - v, color.a);
+
+        color = CharaYuko.color;
+        CharaYuko.color = new Color(v, v, v, color.a);
     }
 
     public void TestTogglePostEffectBloom(bool v)
