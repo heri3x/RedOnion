@@ -1,10 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
+/// <summary>
+/// ゲーム管理
+/// </summary>
 [Singleton("Game Manager", true)]
 public class GameManager : MonoBehaviour
 {
+    // 
+    // publicフィールド
+    // 
+    //-------------------------------------------------
+    [Space(20)]
+    //-------------------------------------------------
     public EnemyData[] LevelData;
 
     [Range(1, 20)]
@@ -20,10 +30,33 @@ public class GameManager : MonoBehaviour
 
     public ParamGroup TestParamGroup;
 
+    //-------------------------------------------------
+    [Space(20)]
+    //-------------------------------------------------
+    public RawImageFadeController ScreenFadeController;
+
+    //-------------------------------------------------
+
 
     public static GameManager Instance
     {
         get { return SingletonUtility<GameManager>.Instance; }
+    }
+
+
+    // シーン初期化処理
+    public void SceneInit(RawImage screenFadeImage)
+    {
+        Debug.Log("GameManager.SceneInit()");
+        ScreenFadeController = GetComponent<RawImageFadeController>();
+        ScreenFadeController.Init(screenFadeImage);
+    }
+
+    // シーン終了処理
+    public void SceneTerm()
+    {
+        Debug.Log("GameManager.SceneTerm()");
+        ScreenFadeController.Term();
     }
 
 
@@ -37,6 +70,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameManager.Awake");
 
+        //-----------------------------------
         //pass SO info into our enemy
         var objects = UnityEngine.Object.FindObjectsOfType<EnemyController>();
         int level = Level;
@@ -46,6 +80,7 @@ public class GameManager : MonoBehaviour
             v.Data = GetLevelData(level);
             level++;
         }
+        //-----------------------------------
 
         SingletonUtility<GameManager>.HanldeAwake(this);
     }

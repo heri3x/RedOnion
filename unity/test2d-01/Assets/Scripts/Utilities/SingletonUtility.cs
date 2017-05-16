@@ -28,7 +28,16 @@ using UnityEngine;
 public class SingletonUtility<T> where T : MonoBehaviour
 {
     /// <summary>
-    /// もしシングルトンインスタンスがなければ生成する
+    /// シングルトンインスタンスが存在していればtrueを返す
+    /// </summary>
+    /// <returns></returns>
+    public static bool IsInstanceExists()
+    {
+        return m_instantiated;
+    }
+
+    /// <summary>
+    /// もしシングルトンインスタンスが存在しなければ新規生成する。存在していれば何もしない
     /// </summary>
     public static void EnsureInstance()
     {
