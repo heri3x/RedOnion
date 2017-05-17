@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[AddComponentMenu("Test/MainSceneController")]
 public class MainSceneController : MonoBehaviour
 {
     public Camera MainCamera;
@@ -89,15 +88,21 @@ public class MainSceneController : MonoBehaviour
         GameManager.Instance.ObjectShakeController.Shake(MainCamera.gameObject);
     }
 
-    //-------------------------------------------------------------
+    public MovieController BigBuckBunnyMovie;
+    public MovieController UnityChanTurnMovie;
 
-
-    [ContextMenu("MainScene Do Something")]
-    void DoSomething()
+    public void TestPlayMovieBigBuckBunny()
     {
-        Debug.Log("Perform operation");
+        BigBuckBunnyMovie.TogglePlay();
     }
 
+    public void TestPlayMovieUnityChanTurn()
+    {
+        UnityChanTurnMovie.TogglePlay();
+    }
+
+
+    //-------------------------------------------------------------
 
     private void Awake()
     {

@@ -2,11 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Custom/PlayerController")]
 public class PlayerController : MonoBehaviour
 {
     public float Speed = 8;
 
     private Rigidbody2D m_rigidBody;
+
+    [ContextMenu("Rotate Right")]
+    void RotateRight()
+    {
+        gameObject.transform.Rotate(new Vector3(0, 0, 45));
+    }
+
+    [ContextMenu("Rotate Left")]
+    void RotateLeft()
+    {
+        gameObject.transform.Rotate(new Vector3(0, 0, -45));
+    }
+
 
     void Start()
     {

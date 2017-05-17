@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[AddComponentMenu("Custom/EnemyController")]
 public class EnemyController : MonoBehaviour
 {
     public EnemyData Data;
@@ -9,6 +10,19 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D m_rigidBody;
     private float m_count = 0;
     private bool m_moveLeft = false;
+
+    [ContextMenu("Rotate Right")]
+    void RotateRight()
+    {
+        gameObject.transform.Rotate(new Vector3(0, 0, 45));
+    }
+
+    [ContextMenu("Rotate Left")]
+    void RotateLeft()
+    {
+        gameObject.transform.Rotate(new Vector3(0, 0, -45));
+    }
+
 
     void Start()
     {
