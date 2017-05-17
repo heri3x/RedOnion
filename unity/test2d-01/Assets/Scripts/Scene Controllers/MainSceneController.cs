@@ -32,8 +32,8 @@ public class MainSceneController : MonoBehaviour
     }
 
     public SpriteRenderer CharaMisaki;
+    public SpriteRenderer CharaYuko;
     public RawImage CharaKohaku;
-    public RawImage CharaYuko;
 
     public void TestSetCharaColorValue(float v)
     {
@@ -42,11 +42,11 @@ public class MainSceneController : MonoBehaviour
         color = CharaMisaki.color;
         CharaMisaki.color = new Color(v, color.g, color.b, color.a);
 
-        color = CharaKohaku.color;
-        CharaKohaku.color = new Color(1.0f - v, color.g, 1.0f - v, color.a);
-
         color = CharaYuko.color;
-        CharaYuko.color = new Color(v, v, v, color.a);
+        CharaYuko.color = new Color(1.0f - v, 1.0f - v, 1.0f - v, color.a);
+
+        color = CharaKohaku.color;
+        CharaKohaku.color = new Color(v, v, v, color.a);
     }
 
     public void TestTogglePostEffectBloom(bool v)
