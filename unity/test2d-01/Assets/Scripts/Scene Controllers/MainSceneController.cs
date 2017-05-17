@@ -8,6 +8,7 @@ public class MainSceneController : MonoBehaviour
 {
     public Camera MainCamera;
     public UnityEngine.UI.RawImage ScreenFadeImage;
+    public GameObject Cube;
 
     //-------------------------------------------------------------
     public void TestBlackOut()
@@ -102,6 +103,18 @@ public class MainSceneController : MonoBehaviour
     {
         // GameManagerのシーン初期化処理を呼び出し
         GameManager.Instance.SceneInit(MainCamera, ScreenFadeImage);
+    }
+
+    private void Start()
+    {
+        // 回転ループ
+        iTween.RotateTo(Cube.gameObject, iTween.Hash(
+          "y", 360.0f * 1000
+        , "time", 5.0f * 1000
+        , "easetype", "linear"
+        , "looptype", "loop"
+        , "islocal", false
+        ));
     }
 
     private void OnDestroy()
