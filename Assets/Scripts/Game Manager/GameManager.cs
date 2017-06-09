@@ -7,9 +7,9 @@ using UnityEngine.UI;
 /// ゲーム管理
 /// </summary>
 /// <remarks>
-/// GameManagerのPrefabは、PrefabsフォルダではなくResourceフォルダに配置してください。
+/// このクラスのPrefabはResourceフォルダ下に配置してください。
 /// </remarks>
-[Singleton("Game Manager", true)]
+[Singleton("Prefabs/Game Manager", true)]
 public class GameManager : MonoBehaviour
 {
     // 
