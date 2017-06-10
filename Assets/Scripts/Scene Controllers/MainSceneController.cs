@@ -7,7 +7,8 @@ public class MainSceneController : MonoBehaviour
 {
     public Camera MainCamera;
     public UnityEngine.UI.RawImage ScreenFadeImage;
-    public GameObject Cube;
+    public GameObject Cube1;
+    public GameObject Cube2;
 
     //-------------------------------------------------------------
     public void TestBlackOut()
@@ -101,6 +102,19 @@ public class MainSceneController : MonoBehaviour
         UnityChanTurnMovie.TogglePlay();
     }
 
+    //-------------------------------------------------------------
+
+    private void rotateObject(GameObject go)
+    {
+        // 回転ループ
+        iTween.RotateTo(go, iTween.Hash(
+          "y", 360.0f * 1000
+        , "time", 5.0f * 1000
+        , "easetype", "linear"
+        , "looptype", "loop"
+        , "islocal", false
+        ));
+    }
 
     //-------------------------------------------------------------
 
@@ -112,14 +126,8 @@ public class MainSceneController : MonoBehaviour
 
     private void Start()
     {
-        // 回転ループ
-        iTween.RotateTo(Cube.gameObject, iTween.Hash(
-          "y", 360.0f * 1000
-        , "time", 5.0f * 1000
-        , "easetype", "linear"
-        , "looptype", "loop"
-        , "islocal", false
-        ));
+        rotateObject(Cube1);
+        rotateObject(Cube2);
     }
 
     private void OnDestroy()
